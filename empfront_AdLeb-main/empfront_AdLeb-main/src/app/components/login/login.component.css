@@ -1,0 +1,20 @@
+form {
+    margin-left: 8%;
+  }
+  mat-form-field{
+      margin-top: 5%;
+      width: 50%;
+      font-size: 20px;
+  }
+  mat-label{
+      width:50%;
+  }
+  button{
+      margin-top: 15px;
+      width:50%;
+      font-size: 18px;
+      padding: 18px 10px;
+  }
+  mat-hint{
+      width:50%;
+  }

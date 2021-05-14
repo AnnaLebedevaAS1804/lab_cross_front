@@ -1,0 +1,10 @@
+mat-toolbar 
+{
+    background-color: rgb(236, 230, 236);
+    height: 64px;
+}
+h1 
+{
+    color: rgb(67, 44, 99);
+    margin-left: 0.5em;
+}

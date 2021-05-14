@@ -1,0 +1,40 @@
+<form #f="ngForm" (submit)="$event.preventDefault()">
+<p>
+  <p>
+    {{msg}}
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput #first [formControl]="EmailFormControl" [errorStateMatcher]="matcher" placeholder='Ex. adutova@mail.ru'>
+      <mat-hint *ngIf="EmailAutofilled">Autofilled!</mat-hint>
+      <!-- <input matInput #first placeholder="Ex. adutova@mail.ru" [(ngModel)]="email" required>
+		  <mat-error>Email Required!</mat-error>
+      Please enter a valid email address
+      </mat-error> -->
+      <mat-error *ngIf="EmailFormControl.hasError('email') && !EmailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="EmailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+</p>
+<p>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput #last [formControl]="PasswordFormControl" [errorStateMatcher]="matcher_pass">
+      <mat-hint *ngIf="PasswordAutofilled">Autofilled!</mat-hint>
+      <mat-error *ngIf="PasswordFormControl.hasError('minlength') && !PasswordFormControl.hasError('required')">
+        Please enter a password at least 5 symbols long
+      </mat-error>
+      <mat-error *ngIf="PasswordFormControl.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+</p>
+<p>
+    <button mat-raised-button (click)="onClick(f.value)">Submit</button>
+    <!-- <button mat-raised-button (click)="onClick">Submit</button> -->
+</p>
+</form>
